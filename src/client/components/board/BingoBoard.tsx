@@ -8,7 +8,7 @@ import BoardTile from './BoardTile/BoardTile';
 import { BoardData } from '../../../shared/types';
 
 function BingoBoard({ data }: { data: BoardData }) {
-  const [boardData, setBoardData] = useState<string[][]>(generateBoard(data.entries));
+  const [boardData, setBoardData] = useState<string[][]>(generateBoard(data.entries, data.freeSpace));
 
   return (
     <div>

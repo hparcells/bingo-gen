@@ -1,7 +1,7 @@
 import { randomOf } from '@reverse/random';
 import { remove } from '@reverse/array';
 
-function generateBoard(options: string[]) {
+function generateBoard(options: string[], freeSpace: boolean) {
   const output: string[][] = [];
   let remaining = options.concat();
 
@@ -9,8 +9,9 @@ function generateBoard(options: string[]) {
     output.push([]);
 
     for(let j = 0; j < 5; j++) {
-
-      if(remaining.length > 0) {
+      if(freeSpace && i === 2 && j === 2) {
+        output[i].push('Free Space');
+      }else if(remaining.length > 0) {
         const entry = randomOf(remaining);
 
         output[i].push(entry);
