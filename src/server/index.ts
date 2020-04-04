@@ -1,16 +1,13 @@
 import { app, rootRouter } from 'fullstack-system';
+import bodyParser from 'body-parser';
 
 import { BoardData } from '../shared/types';
 
-const boards: { [id: string]: BoardData } = {
-  // TODO: Delete this.
-  'h': {
-    name: 'Best Thing Ever',
-    description: 'yes',
-    entries: ['OwO', 'UwU', '*nuzzles*'],
-    freeSpace: true
-  }
-};
+const boards: { [id: string]: BoardData } = {};
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 
 app.get('/api/:boardId', (req, res) => {
   if(boards[req.params.boardId]) {
@@ -22,4 +19,9 @@ app.get('/api/:boardId', (req, res) => {
 app.get('*', (req, res, next) => {
   req.url = '/';
   rootRouter(req, res, next);
+});
+
+app.post('/api/new', (req, res) => {
+  boards[req.body.id] = req.body.boardData;
+  res.sendStatus(200);
 });
