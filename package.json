@@ -1,8 +1,7 @@
 {
   "name": "bingo-gen",
-  "description": "Boilerplate code for making a server side app using React, Socket.io, and TypeScript.",
+  "description": "Create a bingo board for any occasion.",
   "version": "1.0.0",
-  "author": "Dave Caruso",
   "scripts": {
     "start": "fullstack-system dev",
     "dev": "fullstack-system dev",
@@ -11,16 +10,22 @@
     "production": "fullstack-system production"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.0.5",
+    "@reverse/array": "^1.7.3",
+    "@reverse/random": "^1.0.12",
     "antd": "^4.1.0",
-    "fullstack-system": "^2.5.0",
+    "fullstack-system": "^2.8.2",
     "node-fetch": "^2.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.1.2"
+    "react-router-dom": "^5.1.2",
+    "react-zoom-pan-pinch": "^1.6.1"
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.5",
     "@types/react-router-dom": "^5.1.3",
+    "core-js": "^2.6.11",
+    "node-sass": "^4.13.1",
     "prettier": "^2.0.2",
     "tslint": "^6.1.1",
     "tslint-config-prettier": "^1.18.0",

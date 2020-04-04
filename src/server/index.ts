@@ -5,7 +5,9 @@ import { BoardData } from '../shared/types';
 const boards: { [id: string]: BoardData } = {
   // TODO: Delete this.
   'h': {
-    entries: ['a', 'b', 'c'],
+    name: 'Best Thing Ever',
+    description: 'yes',
+    entries: ['OwO', 'UwU', '*nuzzles*'],
     freeSpace: true
   }
 };

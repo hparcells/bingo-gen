@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import fetch from 'node-fetch';
-import { BoardData } from '../../shared/types';
+import { Result, Button } from 'antd';
+import { HomeOutlined } from '@ant-design/icons';
+
+import NotFound from '../NotFound';
+
+import { BoardData } from '../../../shared/types';
+import BingoBoard from '../board/BingoBoard';
 
 function Board() {
   const { boardId } = useParams();
@@ -20,9 +26,9 @@ function Board() {
       {
         boardData
           ? boardData === 404
-            ? 'Not found :('
-            : JSON.stringify(boardData)
-          : 'loading'
+            ? <NotFound />
+            : <BingoBoard data={boardData} />
+          : null
       }
     </div>
   );

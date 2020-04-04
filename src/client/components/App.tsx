@@ -1,9 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Home from './Home';
-import Creator from './Creator';
-import Board from './Board';
+import Home from './pages/Home';
+import Creator from './pages/Creator';
+import Board from './pages/Board';
+import NotFound from './NotFound';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route path='/' exact children={<Home />} />
       <Route path='/creator' children={<Creator />} />
       <Route path='/b/:boardId' children={<Board />} />
+      <Route children={<NotFound />} />
     </Switch>
   );
 }
