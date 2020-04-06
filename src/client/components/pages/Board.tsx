@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import fetch from 'node-fetch';
-import { Result, Button } from 'antd';
-import { HomeOutlined } from '@ant-design/icons';
 
 import NotFound from '../NotFound';
 

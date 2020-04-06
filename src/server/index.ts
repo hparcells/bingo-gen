@@ -22,6 +22,8 @@ app.get('*', (req, res, next) => {
 });
 
 app.post('/api/new', (req, res) => {
-  boards[req.body.id] = req.body.boardData;
-  res.sendStatus(200);
+  if(req.body.id && req.body.boardData) {
+    boards[req.body.id] = req.body.boardData;
+    res.sendStatus(200);
+  }
 });
